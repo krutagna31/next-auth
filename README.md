@@ -1,6 +1,6 @@
-# Next.js Template
+# Next Auth
 
-A starter template repository with next.js using app router, pre-configured with typescript, tailwind css and shadcn/ui.
+A project to explore authentication in next.js using nextauth.
 
 ## Table of contents
 
@@ -28,13 +28,13 @@ Follow these steps to get a copy of the project up and running on your local mac
 ### Cloning the repository
 
 ```sh
-git clone https://github.com/krutagna31/nextjs-template.git
+git clone https://github.com/krutagna31/next-auth.git
 ```
 
 ### Installing dependencies
 
 ```sh
-cd nextjs-template
+cd next-auth
 npm install
 ```
 
