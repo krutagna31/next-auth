@@ -23,8 +23,8 @@ import {
 import Link from "next/link";
 
 const formSchema = z.object({
-  email: z.string(),
-  password: z.string(),
+  email: z.email(),
+  password: z.string().min(8, "Password must be at least 8 characters long"),
 });
 
 export default function LoginPage() {
@@ -50,11 +50,11 @@ export default function LoginPage() {
               Enter your email below to login to your account
             </CardDescription>
           </CardHeader>
-          <CardContent>
+          <CardContent className="space-y-6">
             <Form {...form}>
               <form
-                onSubmit={form.handleSubmit(onSubmit)}
                 className="space-y-6"
+                onSubmit={form.handleSubmit(onSubmit)}
               >
                 <FormField
                   control={form.control}
@@ -64,7 +64,7 @@ export default function LoginPage() {
                       <FormLabel>Email</FormLabel>
                       <FormControl>
                         <Input
-                          type="text"
+                          type="email"
                           placeholder="a@example.com"
                           {...field}
                         />
@@ -96,12 +96,14 @@ export default function LoginPage() {
                 <Button className="w-full" type="submit">
                   Submit
                 </Button>
-                <p className="text-sm text-center">
-                  <span>Don&apos;t have an account? </span>
-                  <Link className="underline" href="/">Sign up</Link>
-                </p>
               </form>
             </Form>
+            <p className="text-center text-sm">
+              <span>Don&apos;t have an account? </span>
+              <Link className="underline" href="/register">
+                Register
+              </Link>
+            </p>
           </CardContent>
         </Card>
       </ViewContainer>
