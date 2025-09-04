@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Josefin_Sans } from "next/font/google";
 import { ThemeProvider } from "@/context/theme-provider";
-import { Header } from "@/components/sections";
 import "./globals.css";
 
 const josefinSans = Josefin_Sans({
@@ -9,11 +8,11 @@ const josefinSans = Josefin_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Next.js Template",
-  description: "A Next.js template with shadcn/ui and tailwind css installed",
+  title: "Next Auth",
+  description: "A project to explore authentication in next.js using nextauth.",
 };
 
-export default function RootLayout({
+export default function HomeLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -27,8 +26,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          <main>{children}</main>
+          {children}
         </ThemeProvider>
       </body>
     </html>
