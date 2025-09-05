@@ -1,3 +1,9 @@
-export default function DashboardPage() {
-  return <h1>Dashboard</h1>;
+import { auth } from "@/auth";
+import { Header } from "@/components/sections";
+
+export default async function DashboardPage() {
+  const session = await auth();
+  console.log(session);
+
+  return <Header />
 }
